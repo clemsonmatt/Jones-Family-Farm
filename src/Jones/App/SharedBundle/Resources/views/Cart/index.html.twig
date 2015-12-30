@@ -1,0 +1,88 @@
+{% extends 'JonesAppSharedBundle:Shared:layout.html.twig' %}
+
+{% set page_header = 'My Cart' %}
+
+{% block container %}
+    <div style="margin: 50px 0px;">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>3 Items In Cart</h2>
+                <table class="table table-striped" style="border: 1px solid #ddd;">
+                    <tr>
+                        <td>
+                            <div style="background-color: #eee; width: 100%; height: 150px; padding: 20px;">
+                                <h1 style="color: #ddd; text-align: center; padding-top: 10px;">Image</h1>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>Product Name 2</h3>
+                            <h4 style="color: #dfb900;">$19.99</h4>
+                            <h5>Qty: 1</h5>
+                            <br>
+                            <a href="#">Edit</a> | <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="background-color: #eee; width: 100%; height: 150px; padding: 20px;">
+                                <h1 style="color: #ddd; text-align: center; padding-top: 10px;">Image</h1>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>Product Name 4</h3>
+                            <h4 style="color: #dfb900;">$9.99</h4>
+                            <h5>Qty: 1</h5>
+                            <br>
+                            <a href="#">Edit</a> | <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="background-color: #eee; width: 100%; height: 150px; padding: 20px;">
+                                <h1 style="color: #ddd; text-align: center; padding-top: 10px;">Image</h1>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>Product Name 9</h3>
+                            <h4 style="color: #dfb900;">$9.99</h4>
+                            <h5>Qty: 2</h5>
+                            <br>
+                            <a href="#">Edit</a> | <a href="#">Remove</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <h2>Order Summary</h2>
+                <div class="panel panel-custom">
+                    <div class="panel-body">
+                        <table style="width: 100%;">
+                            <tr style="height: 30px;">
+                                <td class="col-sm-4">Subtotal:</td>
+                                <th class="col-sm-8">$49.96</th>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td class="col-sm-4">Shipping:</td>
+                                <th class="col-sm-8">Local Pickup (Free)</th>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td class="col-sm-4"></td>
+                                <th class="col-sm-8"><button class="btn btn-custom btn-sm">Calculate Shipping</button></th>
+                            </tr>
+                        </table>
+                        <hr>
+                        <table style="width: 100%;">
+                            <tr style="height: 50px; background-color: #eee;">
+                                <th class="col-sm-4">TOTAL:</th>
+                                <th class="col-sm-8">$49.96</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-custom-warning btn-block" style="border-radius: 0px;">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

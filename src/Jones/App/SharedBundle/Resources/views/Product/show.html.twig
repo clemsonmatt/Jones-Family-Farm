@@ -1,0 +1,75 @@
+{% extends 'JonesAppSharedBundle:Shared:layout.html.twig' %}
+
+{% set page_header = 'Our Products' %}
+
+{% block container %}
+    <div style="margin: 50px 0px;">
+        <div class="row">
+            <div class="col-md-5">
+                <div style="background-color: #eee; width: 100%; height: 300px; padding: 20px;">
+                    <h1 style="color: #ddd; text-align: center; padding-top: 80px;">Image</h1>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h1>Product Name {{ product }}</h1>
+                <h2 style="color: #dfb900;">$19.99</h2>
+                <br>
+                <ul>
+                    <li>Detail 1</li>
+                    <li>Detail 2</li>
+                    <li>Detail 3</li>
+                </ul>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <input class="form-control" value="1">
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-custom-warning btn-block">
+                            <i class="fa fa-plus"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# description #}
+    <div style="margin-bottom: 100px;">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#description" role="tab" data-toggle="tab">Description</a>
+            </li>
+            <li role="presentation">
+                <a href="#info" role="tab" data-toggle="tab">Additional Information</a>
+            </li>
+        </ul>
+        <div class="tab-content" style="padding: 15px; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd;">
+            <div role="tabpanel" class="tab-pane active" id="description">
+                <h2>Product Description</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+                <br><br>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="info">
+                <h2>Additional Information</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="col-sm-2">Weight</th>
+                        <td>1.5 lbs</td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-2">Dimensions</th>
+                        <td>7 x 4.5 x 3 in</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

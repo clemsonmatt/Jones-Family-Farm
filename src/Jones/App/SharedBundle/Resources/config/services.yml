@@ -1,0 +1,4 @@
+services:
+#    jones_app_shared.example:
+#        class: Jones\App\SharedBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

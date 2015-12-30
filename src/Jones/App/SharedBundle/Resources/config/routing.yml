@@ -1,0 +1,9 @@
+jones_app_shared:
+    resource: "@JonesAppSharedBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+# royal_app_people:
+#     resource: "@RoyalAppPeopleBundle/Controller/"
+#     type:     annotation
+#     prefix:   /people

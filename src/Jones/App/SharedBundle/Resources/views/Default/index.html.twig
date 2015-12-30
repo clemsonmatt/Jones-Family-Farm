@@ -1,0 +1,148 @@
+{% extends 'JonesAppSharedBundle:Shared:layout.html.twig' %}
+
+{% block subHeader %}
+    <img src="{{ asset('bundles/jonesappshared/images/hives-header.jpg') }}" style="max-width: 100%; position: relative;">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div style="margin: 100px 0px;">
+            <h1 style="color: #777; text-align: center; font-size: 3.4em;">JONES FAMILY FARM</h1>
+            <hr>
+            <p style="color: #999; font-size: 1.6em; line-height: 36px;">
+                The Jones Family Farm is a localy owned and operated ....
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+    {# yellow section #}
+    <div style="background-color: #dfb900; padding: 50px; height: 350px; width: 100%; color: #fff;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>The original Jones family farm was built in the early 1930's by Curtis and Louise Jones.</h1>
+                    <br>
+                    <i class="pull-right">
+                        Painting by Robbie Morgan (Granddaughter of Curtis and Louise)
+                    </i>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <center>
+                        <img src="{{ asset('bundles/jonesappshared/images/originalFarm.jpg') }}" style="max-width: 100%; max-height: 250px;">
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# grey #}
+    <div style="background-color: #f4f4f4; padding: 100px 0px; width: 100%; margin-bottom: 100px;">
+        <div class="container">
+            <h1 style="color: #777; text-align: center; font-size: 3.4em;">
+                Homegrown and homespun goods inspired by the honey from our hives.
+            </h1>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="panel panel-custom">
+                        <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                            <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Honey Soaps</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="panel panel-custom">
+                        <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                        <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Honey Candles</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="panel panel-custom">
+                        <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                        <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Honey Beauty Products</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="panel panel-custom">
+                        <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                        <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Honey Room Sprays</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="panel panel-custom">
+                        <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                        <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Honey Pecans</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# bible verse #}
+    <div class="container" style="margin-bottom: 100px;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2 style="color: #dfb900; text-align: center; line-height: 48px;">
+                    My son, eat honey for it is good, and the dripping of the honeycomb are sweet to your tasts.
+                    <br><br>
+                    <i class="pull-right small" style="color: #dfb900;">
+                        Proverbs 24:13
+                    </i>
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        /* nav */
+        $(document).ready(function(){
+            var scroll_start = 0;
+            var startchange = $('#startchange');
+            var offset = startchange.offset();
+            $(document).scroll(function() {
+                scroll_start = $(this).scrollTop();
+                if(scroll_start > offset.top - 75) {
+                    $('.navbar-custom2').fadeOut();
+                    $('.navbar-custom1').fadeIn();
+                    // var navbar = $('.navbar-custom2');
+                    // navbar.addClass('navbar-custom1');
+                    // navbar.removeClass('navbar-custom2');
+                } else {
+                    $('.navbar-custom1').fadeOut();
+                    $('.navbar-custom2').fadeIn();
+                    // var navbar = $('.navbar-custom1');
+                    // navbar.addClass('navbar-custom2');
+                    // navbar.removeClass('navbar-custom1');
+                }
+            });
+        });
+    </script>
+{% endblock %}

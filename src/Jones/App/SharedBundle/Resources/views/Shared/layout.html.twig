@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jones Family Farm</title>
+
+    {% block stylesheets %}
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        {#<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>#}
+
+        {% stylesheets
+            '@JonesAppSharedBundle/Resources/public/css/bootstrap/bootstrap.css'
+            '@JonesAppSharedBundle/Resources/public/css/nav.css'
+            '@JonesAppSharedBundle/Resources/public/css/custom.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        <style type="text/css">
+            @font-face {
+                font-family: "GeosansLight";
+                src: url("{{ asset('bundles/jonesappshared/fonts/GeosansLight.ttf') }}")
+            }
+            @font-face {
+                font-family: "Lato";
+                src: url("{{ asset('bundles/jonesappshared/fonts/Lato-Light.ttf') }}")
+            }
+        </style>
+    {% endblock %}
+
+</head>
+{#<body style="font-family: 'GeoSansLight';">#}
+<body style="font-family: 'Lato', sans-serif;">
+
+    {% block header %}
+        {% set route = app.request.attributes.get('_route') %}
+        {% if route == 'jones_app_shared_default_index' %}
+            {% set active_tab = {home:"active", product:"", contact:""} %}
+            {% include 'JonesAppSharedBundle:Shared:navHome.html.twig' with active_tab %}
+        {% else %}
+            {% if "contact" in route %}
+                {% set active_tab = {home:"", product:"", contact:"active"} %}
+            {% elseif "product" in route %}
+                {% set active_tab = {home:"", product:"active", contact:""} %}
+            {% else %}
+                {% set active_tab = {home:"", product:"", contact:""} %}
+            {% endif %}
+            {% include 'JonesAppSharedBundle:Shared:nav.html.twig' %}
+        {% endif %}
+
+        {% block subHeader %}
+            <div style="background-color: #dfb900; width: 100%; height: 150px; color: #fff; padding: 65px 0px 50px 0px;">
+                <div class="container">
+                    <div class="pull-right">
+                        <div class="input-group" style="width: 300px; margin-top: 30px;">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search text-muted"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <h1 style="font-size: 3.4em;">{{ page_header|default('Page Header') }}</h1>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+
+    <div id="startchange">
+        {% block content %}
+            <div class="container">
+                {% block container %}
+
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+        {% include 'JonesAppSharedBundle:Shared:footer.html.twig' %}
+    {% endblock %}
+
+
+    {% block javascripts %}
+        {% javascripts
+            'bundles/jonesappshared/js/jquery-1.11.1.min.js'
+            'bundles/jonesappshared/js/bootstrap/bootstrap.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        <script>
+            /* click row */
+            $('.js-row-click').on('click', function(e){
+                var url = $(this).attr('data-url');
+                window.location.href = url;
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

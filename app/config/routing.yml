@@ -1,0 +1,3 @@
+jones_app:
+    resource: "@JonesAppSharedBundle/Resources/config/routing.yml"
+    schemes:  [http]

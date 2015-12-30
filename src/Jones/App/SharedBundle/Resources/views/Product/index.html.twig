@@ -1,0 +1,51 @@
+{% extends 'JonesAppSharedBundle:Shared:layout.html.twig' %}
+
+{% set page_header = 'Our Products' %}
+
+{% block container %}
+    {# products #}
+    <div style="margin: 50px 0px;">
+        <div class="row">
+            {% for product in 1..9 %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="panel panel-custom panel-custom-hover">
+                        <div class="js-row-click" data-url="{{ path('jones_app_shared_product_show', {'product': product}) }}">
+                            <div style="background-color: #eee; height: 200px; width: 100%; padding: 20px;">
+                                <h1 style="color: #ddd; text-align: center; padding-top: 50px;">Image</h1>
+                            </div>
+                            <div class="panel-body">
+                                <h3>Product Name {{ product }}</h3>
+                                <hr>
+                                <ul>
+                                    <li>Detail 1</li>
+                                    <li>Detail 2</li>
+                                    <li>Detail 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-footer panel-footer-custom" style="padding: 20px;">
+                            <a href="#" class="btn btn-custom btn-sm pull-right">
+                                Add to cart
+                            </a>
+                            <span style="color: #dfb900; font-size: 1.2em;">
+                                $19.99
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {# text about products #}
+    <div class="container" style="margin-bottom: 100px;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2 style="color: #dfb900; text-align: center; line-height: 48px;">
+                    Bee inspired products: Sharing a southern family tradition
+                    of hand crafting goods made from the treasures in our own backyard.
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
